@@ -1,0 +1,100 @@
+<!-- <div style="background-image: url('assets/twiteers-logo.jpg');height:500px;"> -->
+<div class="container ">
+  <div class="row">
+    <div class="col-lg-3 col-md-1 col-sm-1">
+    </div>
+    <div class="col-lg-6 col-md-10 col-sm-10 mt-5 border p-5">
+      <div class="alert alert-info small" *ngIf="errorMessage">{{errorMessage}}</div>
+      <h2>Register</h2>
+      <form [formGroup]="signupForm">
+        <div class="row pl-3">
+          <div class="form-group col-lg-6 col-md-12 col-sm-12">
+            <label for="user-name">EmailId</label>
+            <input type="text" formControlName='email' id="user-name" placeholder="Enter User Name" required>
+            <div class="text-danger small"
+              *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">Enter EmailId</div>
+          </div>
+        </div>
+
+            <div class="row pl-3">
+              <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                <label for="first-name">First Name</label>
+                <input type="text" formControlName='firstName' id="first-name" placeholder="Enter First Name" required>
+                <div class="text-danger small"
+                  *ngIf="!signupForm.get('firstName').valid && signupForm.get('firstName').touched">Enter firstname</div>
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                <label for="last-name">Last Name</label>
+                <input type="text" formControlName='lastName' id="last-name" placeholder="Enter Last Name">
+              </div>
+            </div>
+            
+            <div class="form-group col-lg-6 col-md-6 col-sm-12">
+              <label for="dob">login Id</label>
+              <input type="text" formControlName='id' id="id" placeholder="Enter login Id">
+              <div class="text-danger small"
+                  *ngIf="!signupForm.get('id').valid && signupForm.get('id').touched">Enter Login Id</div>
+            </div>
+
+            <div class="form-group col-lg-6 col-md-6 col-sm-12">
+              <label for="gender">Gender</label>
+              <input type="radio" formControlName='gender' id="gender" placeholder="Enter gender" value="male" selected>male
+              <input type="radio" formControlName='gender' id="gender" placeholder="Enter gender" value="female">female
+            </div>
+
+          
+
+        <!-- <div class="row">
+          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+            <label for="dob">Dob</label>
+            <input type="text" formControlName='dob' id="dob" placeholder="Enter Dob">
+          </div> 
+        </div> -->
+        <!-- <div class="row">
+          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+            <label for="gender">Gender</label>
+            <input type="radio" formControlName='gender' id="gender" placeholder="Enter gender" value="male" selected>male
+            <input type="radio" formControlName='gender' id="gender" placeholder="Enter gender" value="female">female
+          </div>
+        </div> -->
+        
+
+        <div class="row pl-3">
+          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+            <label for="password">Password</label>
+            <input type="password" formControlName='password' id="password" placeholder="Enter Password">
+            <div class="text-danger small"
+              *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">Enter password</div>
+            
+          </div>
+
+          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+            <label for="confirmpassword">ConfirmPassword</label>
+            <input type="password" [(ngModel)]='confirmPassword' [ngModelOptions]="{standalone: true}" id="confirmpassword" placeholder="Enter Confirm Password" required>
+            <!-- <div class="text-danger small"
+              *ngIf="confirmPassword.errors?.required">Enter Confrim password</div> -->
+            
+          </div>
+          <div class="text-danger small" *ngIf="passwordCheck">
+            Password do not  match
+
+          </div>
+
+        </div>
+        
+        <div class="row">
+          <div class="form-group col-lg-12 col-md-12 col-sm-12">
+            <button class="btn btn-primary" type="button" value="submit" (click)="signupsubmit(signupForm)"
+              [disabled]="!signupForm.valid || passwordCheck">SignUp</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-3 col-md-1 col-sm-1">
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark text-light mt-5 fixed-bottom">
+  <p>Copyright 2021</p>
+</nav>

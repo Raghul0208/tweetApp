@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark text-light">
+    <section class="logo">
+      <a href="#" class="navbar-brand">
+        <img src="assets/twitter-logo.jpg" alt="Girl in a jacket" width="200" height="70"></a>
+    </section>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <section class="collapse navbar-collapse" id="navbarcollapse">
+      <ul class="navbar-nav ml-auto">
+<li *ngIf="flag === false" class="nav-item active">
+    <a class="nav-link" routerLink="/login">Login</a>
+  </li>
+
+  <li *ngIf="flag === false" class="nav-item active">
+    <a class="nav-link" routerLink="/signup">Register</a>
+  </li>
+
+  <li *ngIf="flag === true" class="nav-item active">
+    <a class="nav-link" routerLink="/homepage">Home</a>
+  </li>
+
+  <li *ngIf="flag === true" class="nav-item active">
+    <a class="nav-link" routerLink="/allUsers">AllUsers</a>
+  </li>
+
+  <li *ngIf="flag === true" class="nav-item active">
+    <a class="nav-link" routerLink="/myTweet">MyTweets</a>
+  </li>
+  <li *ngIf="flag === true" class="nav-item active">
+    <a class="nav-link" routerLink="/reset">ResetPassword</a>
+  </li>
+
+  <li *ngIf="flag === true" class="nav-item active">
+    <a class="nav-link" routerLink="/login">Logout</a>
+  </li>
+</ul>
+</section>
+</nav>
